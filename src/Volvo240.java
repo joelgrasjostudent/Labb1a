@@ -66,5 +66,3 @@ public class Volvo240{
         decrementSpeed(amount);
     }
 }
-
-//Fuck Git
