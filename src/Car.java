@@ -124,11 +124,11 @@ public abstract class Car implements Movable{
 	public void turnLeft() {
 		if (direction == NORTH)
 			direction = WEST;
-		if (direction == SOUTH)
+		else if (direction == SOUTH)
 			direction = EAST;
-		if (direction == WEST)
+		else if (direction == WEST)
 			direction = SOUTH;
-		if (direction == EAST)
+		else
 			direction = NORTH;
 	}
 	/**
@@ -137,11 +137,11 @@ public abstract class Car implements Movable{
 	public void turnRight() {
 		if (direction == NORTH)
 			direction = EAST;
-		if (direction == SOUTH)
+		else if (direction == SOUTH)
 			direction = WEST;
-		if (direction == WEST)
+		else if (direction == WEST)
 			direction = NORTH;
-		if (direction == EAST)
+		else
 			direction = SOUTH;
 	}
 }
