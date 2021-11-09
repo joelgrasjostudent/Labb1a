@@ -24,6 +24,7 @@ public class Volvo240 extends Car{
 
     /**
      * increase speed
+     * @param amount it will increase the speed by this amount * speedfactor. Unless this is higher than its enginepower, than it will max out to its enginepower
      */
     @Override
     public void incrementSpeed(double amount){
@@ -32,6 +33,7 @@ public class Volvo240 extends Car{
 
     /**
      * decrease speed
+     * @param amount it will lower the speed by speedfactor * amount. Unless this results in a currentSpeed under 0, then it will set it to zero.
      */
     @Override
     public void decrementSpeed(double amount){

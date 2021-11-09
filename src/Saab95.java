@@ -41,6 +41,7 @@ public class Saab95 extends Car{
 
     /**
      * increase speed
+     * @param amount it will increase the speed by this amount * speedfactor.
      */
     @Override
     public void incrementSpeed(double amount){
@@ -49,6 +50,7 @@ public class Saab95 extends Car{
 
     /**
      * decrease speed
+     * @param amount it will lower the speed by speedfactor * amount.
      */
     @Override
     public void decrementSpeed(double amount){
