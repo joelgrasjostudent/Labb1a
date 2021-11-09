@@ -20,11 +20,10 @@ public abstract class Car implements Movable{
     private static final int WEST = 3; //West constant
     
     /**
-     * Math.max(getCurrentSpeed() - speedFactor() * amount,0)
-     * @param nrDoors
-     * @param color
-     * @param power
-     * @param model
+     * @param nrDoors amount of doors
+     * @param color color of the car
+     * @param power the power of the cars engine
+     * @param model the name of the model
      */
     public Car(int nrDoors, Color color, int power, String model) {
     	this.nrDoors = nrDoors;
@@ -37,43 +36,37 @@ public abstract class Car implements Movable{
     	direction = NORTH;
     }
     /**
-     * Returns number of doors
-     * @return
+     * @return Returns number of doors
      */
     public int getNrDoors(){
         return nrDoors;
     }
     /**
-     * Returns the engine power
-     * @return
+     * @return Returns the engine power
      */
     public double getEnginePower(){
         return enginePower;
     }
     /**
-     * Returns the current speed
-     * @return
+     * @return Returns the current speed
      */
     public double getCurrentSpeed(){
         return currentSpeed;
     }
     /**
-     * Set a new current speed, takes an input speed as double
-     * @param speed
+     * @param speed Set a new current speed, takes an input speed as double
      */
     public void setCurrentSpeed(double speed) {
     	currentSpeed = speed;
     }
     /**
-     * Returns the color the car has
-     * @return
+     * @return Returns the color the car has
      */
     public Color getColor(){
         return color;
     }
     /**
-     * Give the car a new fancy color, takes the parameter color
-     * @param clr
+     * @param clr Give the car a new fancy color, takes the parameter color
      */
     public void setColor(Color clr){
 	    color = clr;
@@ -91,26 +84,25 @@ public abstract class Car implements Movable{
 	    currentSpeed = 0;
     }
     /**
-     * Returns the car's position.
-     * @return
+     * @return Returns the car's position.
      */
     public double[] getPosition() {
     	double[] res = {x, y};
     	return res;
     }
     /**
-     * Abstract method, used to set a speedfactor in each individual car.
-     * @return
+     * Abstract method, used to get a speedfactor in each individual car.
+     * @return returns the speedfactor
      */
     public abstract double speedFactor();
     /**
      * Increases the speed of the car, takes the parameter amount and increases the speed by that amount
-     * @param amount
+     * @param amount amount to increase the speed with
      */
     public abstract void incrementSpeed(double amount);
     /**
      * Decreases the speed of the car, takes the parameter amount and decreases the speed by that amount
-     * @param amount
+     * @param amount amount to decrease the speed with
      */
     public abstract void decrementSpeed(double amount);
     /**
