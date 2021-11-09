@@ -1,5 +1,8 @@
 import java.awt.*;
 
+/**
+ * represents a car
+ */
 public abstract class Car implements Movable{
 
 	private int nrDoors; // Number of doors on the car
@@ -11,10 +14,10 @@ public abstract class Car implements Movable{
     private double y;
     private int direction;
     
-    public static final int NORTH = 0; //North constant
-    public static final int EAST = 1; //East constant
-    public static final int SOUTH = 2; //South constant
-    public static final int WEST = 3; //West constant
+    private static final int NORTH = 0; //North constant
+    private static final int EAST = 1; //East constant
+    private static final int SOUTH = 2; //South constant
+    private static final int WEST = 3; //West constant
     
     
     //Super constructor, creates a car from doors, color, enginepower, model.
