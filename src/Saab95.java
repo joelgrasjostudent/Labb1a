@@ -10,39 +10,8 @@ public class Saab95{
     public String modelName; // The car model name
     
     public Saab95(){
-        nrDoors = 2;
-        color = Color.red;
-        enginePower = 125;
+    	super(2, Color.red, 125, "Saab95");
 	    turboOn = false;
-        modelName = "Saab95";
-        stopEngine();
-    }
-    
-    public int getNrDoors(){
-        return nrDoors;
-    }
-    public double getEnginePower(){
-        return enginePower;
-    }
-
-    public double getCurrentSpeed(){
-        return currentSpeed;
-    }
-
-    public Color getColor(){
-        return color;
-    }
-
-    public void setColor(Color clr){
-	    color = clr;
-    }
-
-    public void startEngine(){
-	    currentSpeed = 0.1;
-    }
-
-    public void stopEngine(){
-	    currentSpeed = 0;
     }
 
     public void setTurboOn(){
@@ -53,16 +22,19 @@ public class Saab95{
 	    turboOn = false;
     }
     
+    @Override
     public double speedFactor(){
         double turbo = 1;
         if(turboOn) turbo = 1.3;
         return enginePower * 0.01 * turbo;
     }
 
+    @Override
     public void incrementSpeed(double amount){
         currentSpeed = getCurrentSpeed() + speedFactor() * amount;
     }
 
+    @Override
     public void decrementSpeed(double amount){
         currentSpeed = getCurrentSpeed() - speedFactor() * amount;
     }
