@@ -99,12 +99,16 @@ public abstract class Car implements Movable{
      * Increases the speed of the car, takes the parameter amount and increases the speed by that amount
      * @param amount amount to increase the speed with
      */
-    public abstract void incrementSpeed(double amount);
+    public void incrementSpeed(double amount){
+	    setCurrentSpeed(Math.min(getCurrentSpeed() + speedFactor() * amount,getEnginePower()));
+    }
     /**
      * Decreases the speed of the car, takes the parameter amount and decreases the speed by that amount
      * @param amount amount to decrease the speed with
      */
-    public abstract void decrementSpeed(double amount);
+    public void decrementSpeed(double amount){
+        setCurrentSpeed(Math.max(getCurrentSpeed() - speedFactor() * amount,0));
+    }
     /**
      * Moves the car in a given direction, it changes the x and y value depending on its direction
      */
