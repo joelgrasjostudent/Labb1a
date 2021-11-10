@@ -22,23 +22,4 @@ class Volvo240Test {
 		Car volvo = new Volvo240();
 		assertTrue(volvo.speedFactor() == volvo.getEnginePower() * 0.01 * 1.25);
 	}
-	@Test
-	void testIncrementSpeed() {
-		Volvo240 volvo = new Volvo240();
-		double baseSpeed = volvo.getCurrentSpeed();
-		double modifier = 1;
-		volvo.incrementSpeed(modifier);
-		assertTrue(volvo.getCurrentSpeed() > baseSpeed);
-	}
-	@Test
-	void testDecrementSpeed() {
-		Volvo240 volvo = new Volvo240();
-		volvo.setCurrentSpeed(10);
-		double baseSpeed = volvo.getCurrentSpeed();
-		double modifier = 1;
-		volvo.decrementSpeed(modifier);
-		System.out.println(baseSpeed);
-		assertTrue(volvo.getCurrentSpeed() < baseSpeed);
-	}
-	
 }

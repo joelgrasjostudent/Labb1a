@@ -85,6 +85,21 @@ class CarTest {
 		
 		assertTrue((deltaY == 0) && (deltaX == 0));
 	}
-	
+	@Test
+	void testGas() {
+		Car c = new Volvo240();
+		c.startEngine();
+		double startSpeed = c.getCurrentSpeed();
+		c.gas(1);
+		assertTrue(c.getCurrentSpeed() > startSpeed);
+	}
+	@Test
+	void testBrake() {
+		Car c = new Volvo240();
+		c.startEngine();
+		double startSpeed = c.getCurrentSpeed();
+		c.brake(1);
+		assertTrue(c.getCurrentSpeed() < startSpeed);
+	}
 
 }

@@ -28,25 +28,4 @@ class Saab95Test {
 		saab.setTurboOn();
 		assertTrue(saab.speedFactor() == 1.625);
 	}
-	@Test
-	void testIncrementSpeed() {
-		Saab95 saab = new Saab95();
-		double modifier = 18;
-		double firstSpeed = 10;
-		saab.setCurrentSpeed(firstSpeed);
-		saab.incrementSpeed(modifier);
-		double speedFactor = saab.speedFactor();
-		assertTrue(saab.getCurrentSpeed() == speedFactor * modifier + firstSpeed);
-	}
-	@Test
-	void testDecrementSpeed() {
-		Saab95 saab = new Saab95();
-		double modifier = 19;
-		double firstSpeed = 10;
-		saab.setCurrentSpeed(firstSpeed);
-		saab.decrementSpeed(modifier);
-		double speedFactor = saab.speedFactor();
-		assertTrue(saab.getCurrentSpeed() == firstSpeed - speedFactor * modifier);
-	}
-
 }
