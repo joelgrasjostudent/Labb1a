@@ -38,22 +38,4 @@ public class Saab95 extends Car{
         if(turboOn) turbo = 1.3;
         return getEnginePower() * 0.01 * turbo;
     }
-
-    /**
-     * increase speed
-     * @param amount it will increase the speed by this amount * speedfactor.
-     */
-    @Override
-    public void incrementSpeed(double amount){
-        setCurrentSpeed(getCurrentSpeed() + speedFactor() * amount);
-    }
-
-    /**
-     * decrease speed
-     * @param amount it will lower the speed by speedfactor * amount.
-     */
-    @Override
-    public void decrementSpeed(double amount){
-        setCurrentSpeed(getCurrentSpeed() - speedFactor() * amount);
-    }
 }
