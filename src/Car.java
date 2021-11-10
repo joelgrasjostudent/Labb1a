@@ -149,13 +149,23 @@ public abstract class Car implements Movable{
 			direction = SOUTH;
 	}
 	
-	 // TODO fix this method according to lab pm
+	/**
+     * 
+     * @param amount amount to gas with, must be between 0 and 1
+     */
     public void gas(double amount){
+    	amount = Math.max(amount, 0);
+    	amount = Math.min(amount, 1);
         incrementSpeed(amount);
     }
 
-    // TODO fix this method according to lab pm
+    /**
+     * 
+     * @param amount amount to break with, must be between 0 and 1
+     */
     public void brake(double amount){
+    	amount = Math.max(amount, 0);
+    	amount = Math.min(amount, 1);
         decrementSpeed(amount);
     }
 }
