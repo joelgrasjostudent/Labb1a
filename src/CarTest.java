@@ -1,4 +1,5 @@
 import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.awt.Color;
 
@@ -100,6 +101,46 @@ class CarTest {
 		double startSpeed = c.getCurrentSpeed();
 		c.brake(1);
 		assertTrue(c.getCurrentSpeed() < startSpeed);
+	}
+	
+	@Test
+	void testDoors() {
+		Car volvo = new Volvo240();
+		assertTrue(volvo.getNrDoors() == 4);
+	}
+	
+	@Test
+	void testColor() {
+		Car volvo = new Volvo240();
+		assertTrue(volvo.getColor() == Color.black);
+	}
+	@Test
+	void testSpeedFactor() {
+		Car volvo = new Volvo240();
+		assertTrue(volvo.speedFactor() == volvo.getEnginePower() * 0.01 * 1.25);
+	}
+	
+	@Test
+	void testDoorsSaab() {
+		Car saab = new Saab95();
+		assertTrue(saab.getNrDoors() == 2);
+	}
+	@Test
+	void testColorSaab() {
+		Car saab = new Saab95();
+		assertTrue(saab.getColor() == Color.red);
+	}
+	@Test
+	void testSpeedFactorTurboOff() {
+		Saab95 saab = new Saab95(); 
+		saab.setTurboOff();
+		assertTrue(saab.speedFactor() == 1.25);
+	}
+	@Test
+	void testSpeedFactorTurboOn() {
+		Saab95 saab = new Saab95(); 
+		saab.setTurboOn();
+		assertTrue(saab.speedFactor() == 1.625);
 	}
 
 }

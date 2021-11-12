@@ -10,9 +10,9 @@ public abstract class Car implements Movable{
     private double currentSpeed; // The current speed of the car
     private Color color; // Color of the car
     private String modelName; // The car model name
-    private double x; 
-    private double y;
-    private int direction;
+    private double x; //represents position in the horizontal direction
+    private double y; //represents position in the vertical direction
+    private int direction; //represents which direction the car is facing
     
     private static final int NORTH = 0; //North constant
     private static final int EAST = 1; //East constant
